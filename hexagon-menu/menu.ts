@@ -5,7 +5,9 @@
         el.addEventListener('mouseover', () => {
             if (!el.classList.contains('hex-selected')) {
                 el.classList.add('hex-spin');
-                el.classList.add('hex-selected');   
+                el['transitionint'] = window.setTimeout(() => {
+                    el.classList.add('hex-selected');  
+                }, 250); 
             }
         }, false);
 
@@ -13,13 +15,18 @@
             if (!el['timeout']) {
                 el['timeout'] = window.setTimeout(() => {
                     el.classList.add('hex-spin');
+                    el['transitionint'] = window.setTimeout(() => {
+                        el.classList.remove('hex-selected');
+                    }, 250); 
                     el['timeout'] = undefined;
-                    el.classList.remove('hex-selected');
                 }, 5000);
             }
         }, false);
 
         el.addEventListener('webkitAnimationEnd', () => {
+            el.classList.remove('hex-spin');
+        }, false);
+        el.addEventListener('animationend', () => {
             el.classList.remove('hex-spin');
         }, false);
     });
