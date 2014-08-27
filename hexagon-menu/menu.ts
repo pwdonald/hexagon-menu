@@ -9,7 +9,7 @@
             }
         }, false);
 
-        el.addEventListener('mouseleave', () => {
+        el.addEventListener('mouseleave', () => { 
             if (!el['timeout']) {
                 el['timeout'] = window.setTimeout(() => {
                     el.classList.add('hex-spin');
