@@ -33,9 +33,9 @@ span {
 }
 
 .hex-spin {
-    -webkit-animation:spin 500ms linear normal;
-    -moz-animation:spin 500ms linear normal;
-    animation:spin 500ms linear normal;
+    -webkit-animation:spin-half 1000ms ease-in alternate;
+    -moz-animation:spin-half 1000ms ease-in alternate;
+    animation:spin-half 1000ms ease-in alternate;
 }
 
 .hex:after {
@@ -54,10 +54,33 @@ span {
 }
 
 .hex-row:nth-child(even) {
-    margin-left: 52px;
+    margin-left: 55px;
 }
 
 
-@-moz-keyframes spin { 100% { -moz-transform: rotateY(180deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotateY(180deg); } }
-@keyframes spin { 100% { -webkit-transform: rotateY(180deg); transform:rotateY(180deg); } }
+@-moz-keyframes spin-half { 
+    50% { 
+        -moz-transform: rotateY(180deg); 
+    } 
+    100% { 
+        -moz-transform: rotateY(180deg); 
+    } 
+}
+@-webkit-keyframes spin-half { 
+    50% { 
+        -webkit-transform: rotateY(180deg); 
+    } 
+    100% { 
+        -webkit-transform: rotateY(180deg); 
+    } 
+}
+@keyframes spin-half {
+     50% { 
+         -webkit-transform: rotateY(180deg); 
+         transform:rotateY(180deg);  
+     } 
+     100% { 
+         -webkit-transform: rotateY(180deg); 
+         transform:rotateY(180deg); 
+     } 
+}
