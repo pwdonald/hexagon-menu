@@ -1,6 +1,5 @@
 *.js
 bin/
 obj/
-*.config
 *.user
 *.map
