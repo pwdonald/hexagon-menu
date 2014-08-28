@@ -3,3 +3,5 @@ bin/
 obj/
 *.user
 *.map
+*.min.css
+*.css
