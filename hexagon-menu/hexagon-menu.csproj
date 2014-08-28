@@ -61,9 +61,16 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="menu.css" />
+    <Content Include="menu.min.css">
+      <DependentUpon>menu.css</DependentUpon>
+    </Content>
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="menu.less" />
+    <Content Include="menu.css.map">
+      <DependentUpon>menu.css</DependentUpon>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

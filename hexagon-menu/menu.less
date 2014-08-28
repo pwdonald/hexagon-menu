@@ -1,4 +1,11 @@
-﻿body {
+﻿@hex-width: 104px;
+@hex-height: 60px;
+@hex-border1: @hex-height / 2;
+@hex-border2: @hex-width / 2;
+@side1-color: rgba(0,0,0,0.85);
+@side2-color: rgba(0,200,0,0.85);
+
+body {
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -9,44 +16,44 @@ span {
 .hex:before {
     content: " ";
     width: 0; height: 0;
-    border-bottom: 30px solid black;
+    border-bottom: @hex-border1 solid @side1-color;
     border-bottom-color: inherit;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    border-left: @hex-border2 solid transparent;
+    border-right: @hex-border2 solid transparent;
     position: absolute;
-    top: -30px;
+    top: -(@hex-border1);
 }
 
 .hex {
-    margin-top: 30px;
-    width: 104px;
-    height: 60px;
-    background-color:  black;
-    border-color: black;
+    margin-top: @hex-border1;
+    width: @hex-width;
+    height: @hex-height;
+    background-color:  @side1-color;
+    border-color: @side1-color;
     position: relative;
     display: inline-block;
 }
 
 .hex-selected {
-    background-color: green;
-    border-color: green;
+    background-color: @side2-color;
+    border-color: @side2-color;
 }
 
 .hex-spin {
-    -webkit-animation:spin-half 1000ms ease-in alternate;
-    -moz-animation:spin-half 1000ms ease-in alternate;
-    animation:spin-half 1000ms ease-in alternate;
+    -webkit-animation:spin-half 1000ms linear normal;
+    -moz-animation:spin 1000ms linear normal;
+    animation:spin-half 1000ms linear normal;
 }
 
 .hex:after {
     content: "";
     width: 0;
     position: absolute;
-    bottom: -30px;
-    border-top: 30px solid black;
+    bottom: -(@hex-border1);
+    border-top: @hex-border1 solid @side1-color;
     border-top-color: inherit;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
+    border-left: @hex-border2 solid transparent;
+    border-right: @hex-border2 solid transparent;
 }
 
 .hex-row {
@@ -54,7 +61,7 @@ span {
 }
 
 .hex-row:nth-child(even) {
-    margin-left: 55px;
+    margin-left: @hex-border2 + 3;
 }
 
 
